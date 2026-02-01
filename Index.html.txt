@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scam Link 😜</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: #ffe6f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #scamLink {
+        font-size: 22px;
+        color: #ff0066;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #content {
+        display: none;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 14px 26px;
+        font-size: 18px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #yesBtn {
+        background: #ff4d88;
+        color: white;
+    }
+
+    #noBtn {
+        position: absolute;
+        background: #cccccc;
+    }
+</style>
+</head>
+
+<body>
+
+<a id="scamLink">👉 Scam Link</a>
+
+<div id="content">
+    <h1>💖 Will you be my Valentine? 💖</h1>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<script>
+    const scamLink = document.getElementById("scamLink");
+    const content = document.getElementById("content");
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    scamLink.onclick = () => {
+        scamLink.style.display = "none";
+        content.style.display = "block";
+    };
+
+    yesBtn.onclick = () => {
+        alert("Yaaay ❤️ Valentine accepted!");
+    };
+
+    function moveNoButton() {
+        const maxX = window.innerWidth - noBtn.offsetWidth;
+        const maxY = window.innerHeight - noBtn.offsetHeight;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    // Mobile touch
+    noBtn.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        moveNoButton();
+    });
+
+    // Desktop fallback
+    noBtn.addEventListener("mouseover", moveNoButton);
+</script>
+
+</body>
+</html>
+	◦	
